@@ -8,8 +8,11 @@
   "keywords": [],
   "author": "Peter Tripp <petertripp@gmail.com>",
   "license": "MIT",
-  "description": "",
   "dependencies": {
     "nan": "^2.20.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.22.6"
   }
 }
