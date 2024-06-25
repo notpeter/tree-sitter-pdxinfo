@@ -1,0 +1,94 @@
+==================
+Pdxinfo (minimal)
+==================
+name=b360
+author=Panic Inc.
+bundleID=com.panic.b360
+buildNumber=123
+
+---
+(pdxinfo
+    (definition
+    (name
+        (string)))
+    (definition
+    (author
+        (string)))
+    (definition
+    (bundleID
+        (reverse_dns)))
+    (definition
+    (buildNumber
+        (integer))))
+==================
+Pdxinfo (no-comments)
+==================
+name=b360
+author=Panic Inc.
+bundleID=com.panic.b360
+buildNumber=123
+imagePath=path/to/launcher/assets
+launchSoundPath=path/to/launch/sound/file
+contentWarning=This game contains mild realistic violence and bloodshed.
+contentWarning2=This game contains flashing content that may not be suitable for photosensitive epilepsy.
+
+---
+(pdxinfo
+    (definition
+    (name
+        (string)))
+    (definition
+    (author
+        (string)))
+    (definition
+    (bundleID
+        (reverse_dns)))
+    (definition
+    (buildNumber
+        (integer)))
+    (definition
+    (imagePath
+        (string)))
+    (definition
+    (launchSoundPath
+        (string)))
+    (definition
+    (contentWarning
+        (string)))
+    (definition
+    (contentWarning2
+        (string))))
+
+==================
+Pdxinfo (messy)
+==================
+
+# Leading newline...oooo.... and comments.
+# Documentation https://sdk.play.date/inside-playdate/#pdxinfo
+name=A New with Spaces.
+
+author=A Name With Pünc†uå†iönš.
+#
+# customKey=customValue
+bundleID=com.panic.playdate-newgame
+buildNumber=123
+
+
+---
+(pdxinfo
+    (comment)
+    (comment)
+    (definition
+    (name
+        (string)))
+    (definition
+    (author
+        (string)))
+    (comment)
+    (comment)
+    (definition
+    (bundleID
+        (reverse_dns)))
+    (definition
+    (buildNumber
+        (integer))))

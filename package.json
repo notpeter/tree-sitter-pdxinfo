@@ -1,18 +1,101 @@
 {
   "name": "tree-sitter-playdate-pdxinfo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "bindings/node",
+  "types": "bindings/node",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip",
+    "build": "tree-sitter generate --no-bindings",
+    "build-wasm": "tree-sitter build --wasm",
+    "lint": "eslint grammar.js",
+    "parse": "tree-sitter parse",
+    "test": "tree-sitter test"
   },
+  "repository": "github:notpeter/tree-sitter-playdate-pdxinfo",
   "keywords": [],
-  "author": "Peter Tripp <petertripp@gmail.com>",
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "author": "Peter Tripp <petertripp@gmail.com> (https://github.com/notpeter)",
+  "contributors": [],
+  "funding": "https://github.com/sponsors/notpeter/",
   "license": "MIT",
+  "description": "Playdate Pdxinfo Tree-sitter grammar",
   "dependencies": {
-    "nan": "^2.20.0"
+    "node-addon-api": "^8.0.0",
+    "node-gyp-build": "^4.8.1"
   },
-  "description": "",
+  "peerDependencies": {
+    "tree-sitter": "^0.21.1"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "prebuildify": "^6.0.1",
     "tree-sitter-cli": "^0.22.6"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.pdxinfo",
+      "file-types": [
+        "pdxinfo"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injection-regex": "^pdxinfo$"
+    }
+  ],
+  "eslintConfig": {
+    "env": {
+      "commonjs": true,
+      "es2021": true
+    },
+    "extends": "google",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "arrow-parens": "off",
+      "camel-case": "off",
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "max-len": [
+        "error",
+        {
+          "code": 160,
+          "ignoreComments": true,
+          "ignoreUrls": true,
+          "ignoreStrings": true
+        }
+      ],
+      "spaced-comment": [
+        "warn",
+        "always",
+        {
+          "line": {
+            "markers": [
+              "/"
+            ]
+          }
+        }
+      ]
+    }
   }
 }
