@@ -1,6 +1,6 @@
 VERSION := 0.0.1
 
-LANGUAGE_NAME := tree-sitter-pdxinfo
+LANGUAGE_NAME := tree-sitter-playdate-pdxinfo
 
 # repository
 SRC_DIR := src

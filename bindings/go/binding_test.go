@@ -4,11 +4,11 @@ import (
 	"testing"
 
 	tree_sitter "github.com/smacker/go-tree-sitter"
-	"github.com/tree-sitter/tree-sitter-pdxinfo"
+	"github.com/notpeter/tree-sitter-playdate-pdxinfo"
 )
 
 func TestCanLoadGrammar(t *testing.T) {
-	language := tree_sitter.NewLanguage(tree_sitter_pdxinfo.Language())
+	language := tree_sitter.NewLanguage(tree_sitter_playdate_pdxinfo.Language())
 	if language == nil {
 		t.Errorf("Error loading Pdxinfo grammar")
 	}

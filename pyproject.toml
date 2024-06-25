@@ -8,18 +8,18 @@ description = "Pdxinfo grammar for tree-sitter"
 version = "0.0.1"
 keywords = ["incremental", "parsing", "tree-sitter", "pdxinfo"]
 classifiers = [
-  "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
-  "Topic :: Software Development :: Compilers",
-  "Topic :: Text Processing :: Linguistic",
-  "Typing :: Typed"
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
 ]
 requires-python = ">=3.8"
 license.text = "MIT"
 readme = "README.md"
 
 [project.urls]
-Homepage = "https://github.com/tree-sitter/tree-sitter-pdxinfo"
+Homepage = "https://github.com/notpeter/tree-sitter-playdate-pdxinfo"
 
 [project.optional-dependencies]
 core = ["tree-sitter~=0.21"]
