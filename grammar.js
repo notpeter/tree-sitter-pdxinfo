@@ -1,11 +1,11 @@
 /// <reference types="tree-sitter-cli/dsl" />
+// Copyright (c) Peter Tripp
 
 module.exports = grammar({
   name: "pdxinfo",
   extras: (_) => [],
   rules: {
-    document: ($) =>
-      seq(/(\r?\n)*/, repeat(choice($.comment, $.statement, /(\r?\n)+/, "\0"))),
+    document: ($) => seq(/(\r?\n)*/, repeat(choice($.comment, $.statement, /(\r?\n)+/, "\0"))),
     comment: ($) => choice(seq("#", /[^\r\n]+/), "#"),
     statement: ($) =>
       seq(
