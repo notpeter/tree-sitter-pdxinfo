@@ -3,8 +3,8 @@ package tree_sitter_pdxinfo_test
 import (
 	"testing"
 
+	tree_sitter_pdxinfo "github.com/notpeter/tree-sitter-pdxinfo"
 	tree_sitter "github.com/smacker/go-tree-sitter"
-	"github.com/tree-sitter/tree-sitter-pdxinfo"
 )
 
 func TestCanLoadGrammar(t *testing.T) {
