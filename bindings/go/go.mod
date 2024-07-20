@@ -1,4 +1,4 @@
-module github.com/notpeter/tree-sitter-playdate-pdxinfo
+module github.com/tree-sitter/tree-sitter-pdxinfo
 
 go 1.22
 

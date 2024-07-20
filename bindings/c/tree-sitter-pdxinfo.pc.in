@@ -2,10 +2,10 @@ prefix=@PREFIX@
 libdir=@LIBDIR@
 includedir=@INCLUDEDIR@
 
-Name: tree-sitter-playdate-pdxinfo
+Name: tree-sitter-pdxinfo
 Description: Pdxinfo grammar for tree-sitter
 URL: @URL@
 Version: @VERSION@
 Requires: @REQUIRES@
-Libs: -L${libdir} @ADDITIONAL_LIBS@ -ltree-sitter-playdate-pdxinfo
+Libs: -L${libdir} @ADDITIONAL_LIBS@ -ltree-sitter-pdxinfo
 Cflags: -I${includedir}

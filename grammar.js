@@ -2,22 +2,25 @@
 
 module.exports = grammar({
   name: "pdxinfo",
+  extras: (_) => [],
   rules: {
-    pdxinfo: ($) => repeat(choice($.definition, $.comment, $._newline)),
-    comment: (_) => seq("#", /[^\r\n]*/),
-    _newline: (_) => /\r?\n/,
-    definition: ($) =>
-      choice(
-        $.name,
-        $.author,
-        $.description,
-        $.version,
-        $.bundleID,
-        $.buildNumber,
-        $.imagePath,
-        $.launchSoundPath,
-        $.contentWarning,
-        $.contentWarning2,
+    document: ($) =>
+      seq(/(\r?\n)*/, repeat(choice($.comment, $.statement, /(\r?\n)+/, "\0"))),
+    comment: ($) => choice(seq("#", /[^\r\n]+/), "#"),
+    statement: ($) =>
+      seq(
+        choice(
+          $.name,
+          $.author,
+          $.description,
+          $.version,
+          $.bundleID,
+          $.buildNumber,
+          $.imagePath,
+          $.launchSoundPath,
+          $.contentWarning,
+          $.contentWarning2,
+        ),
       ),
     // Known definitions (key=value)
     name: ($) => seq("name", "=", $.string),
@@ -30,6 +33,7 @@ module.exports = grammar({
     launchSoundPath: ($) => seq("launchSoundPath", "=", $.string),
     contentWarning: ($) => seq("contentWarning", "=", $.string),
     contentWarning2: ($) => seq("contentWarning2", "=", $.string),
+
     // Custom definitions (key=value)
     string: (_) => /[^\r\n]+/,
     integer: (_) => /[0-9]+/,

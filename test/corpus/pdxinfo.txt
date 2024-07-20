@@ -7,19 +7,21 @@ bundleID=com.panic.b360
 buildNumber=123
 
 ---
-(pdxinfo
-    (definition
+
+(document
+  (statement
     (name
-        (string)))
-    (definition
+      (string)))
+  (statement
     (author
-        (string)))
-    (definition
+      (string)))
+  (statement
     (bundleID
-        (reverse_dns)))
-    (definition
+      (reverse_dns)))
+  (statement
     (buildNumber
-        (integer))))
+      (integer))))
+
 ==================
 Pdxinfo (no-comments)
 ==================
@@ -33,31 +35,33 @@ contentWarning=This game contains mild realistic violence and bloodshed.
 contentWarning2=This game contains flashing content that may not be suitable for photosensitive epilepsy.
 
 ---
-(pdxinfo
-    (definition
+(document
+  (statement
     (name
-        (string)))
-    (definition
+      (string )))
+  (statement
     (author
-        (string)))
-    (definition
+      (string )))
+  (statement
     (bundleID
-        (reverse_dns)))
-    (definition
+      (reverse_dns )))
+  (statement
     (buildNumber
-        (integer)))
-    (definition
+      (integer )))
+  (statement
     (imagePath
-        (string)))
-    (definition
+      (string )))
+  (statement
     (launchSoundPath
-        (string)))
-    (definition
+      (string )))
+  (statement
     (contentWarning
-        (string)))
-    (definition
+      (string )))
+  (statement
     (contentWarning2
-        (string))))
+      (string ))))
+
+==================
 
 ==================
 Pdxinfo (messy)
@@ -66,7 +70,6 @@ Pdxinfo (messy)
 # Leading newline...oooo.... and comments.
 # Documentation https://sdk.play.date/inside-playdate/#pdxinfo
 name=A New with Spaces.
-
 author=A Name With Pünc†uå†iönš.
 #
 # customKey=customValue
@@ -75,20 +78,20 @@ buildNumber=123
 
 
 ---
-(pdxinfo
+(document
     (comment)
     (comment)
-    (definition
+    (statement
     (name
         (string)))
-    (definition
+    (statement
     (author
         (string)))
     (comment)
     (comment)
-    (definition
+    (statement
     (bundleID
         (reverse_dns)))
-    (definition
+    (statement
     (buildNumber
         (integer))))

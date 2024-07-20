@@ -1,85 +1,108 @@
 {
   "name": "pdxinfo",
   "rules": {
-    "pdxinfo": {
-      "type": "REPEAT",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "definition"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "comment"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_newline"
-          }
-        ]
-      }
-    },
-    "comment": {
+    "document": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "#"
+          "type": "PATTERN",
+          "value": "(\\r?\\n)*"
         },
         {
-          "type": "PATTERN",
-          "value": "[^\\r\\n]*"
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "comment"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "statement"
+              },
+              {
+                "type": "PATTERN",
+                "value": "(\\r?\\n)+"
+              },
+              {
+                "type": "STRING",
+                "value": "\u0000"
+              }
+            ]
+          }
         }
       ]
     },
-    "_newline": {
-      "type": "PATTERN",
-      "value": "\\r?\\n"
-    },
-    "definition": {
+    "comment": {
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "name"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "PATTERN",
+              "value": "[^\\r\\n]+"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "author"
-        },
+          "type": "STRING",
+          "value": "#"
+        }
+      ]
+    },
+    "statement": {
+      "type": "SEQ",
+      "members": [
         {
-          "type": "SYMBOL",
-          "name": "description"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "version"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "bundleID"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "buildNumber"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "imagePath"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "launchSoundPath"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "contentWarning"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "contentWarning2"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "name"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "author"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "description"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "version"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "bundleID"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "buildNumber"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "imagePath"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "launchSoundPath"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "contentWarning"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "contentWarning2"
+            }
+          ]
         }
       ]
     },
