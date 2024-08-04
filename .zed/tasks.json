@@ -1,19 +1,19 @@
 //https://zed.dev/docs/tasks
 [
   {
-    "label": "tree-sitter: test",
+    "label": "tree-sitter pdxinfo: test",
     "command": "tree-sitter",
     "args": ["test"],
     "use_new_terminal": false
   },
   {
-    "label": "tree-sitter: parse",
+    "label": "tree-sitter-pdxinfo: parse",
     "command": "tree-sitter",
     "args": ["parse", "${ZED_FILE}"],
     "use_new_terminal": false
   },
   {
-    "label": "tree-sitter: highlight",
+    "label": "tree-sitter-pdxinfo: highlight",
     "command": "tree-sitter",
     "args": ["highlight", "${ZED_FILE}"],
     "use_new_terminal": false
