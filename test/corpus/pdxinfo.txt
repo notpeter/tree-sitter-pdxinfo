@@ -22,6 +22,7 @@ buildNumber=123
     (buildNumber
       (integer))))
 
+
 ==================
 Pdxinfo (no-comments)
 ==================
@@ -38,30 +39,29 @@ contentWarning2=This game contains flashing content that may not be suitable for
 (document
   (statement
     (name
-      (string )))
+      (string)))
   (statement
     (author
-      (string )))
+      (string)))
   (statement
     (bundleID
-      (reverse_dns )))
+      (reverse_dns)))
   (statement
     (buildNumber
-      (integer )))
+      (integer)))
   (statement
     (imagePath
-      (string )))
+      (string)))
   (statement
     (launchSoundPath
-      (string )))
+      (string)))
   (statement
     (contentWarning
-      (string )))
+      (string)))
   (statement
     (contentWarning2
-      (string ))))
+      (string))))
 
-==================
 
 ==================
 Pdxinfo (messy)
@@ -95,3 +95,23 @@ buildNumber=123
     (statement
     (buildNumber
         (integer))))
+
+
+==================
+Blank ImagePath
+==================
+name=blank
+imagePath=
+description=Foo
+
+---
+(document
+  (statement
+  (name
+    (string)))
+  (statement
+  (imagePath
+    (string)))
+  (statement
+  (description
+    (string))))

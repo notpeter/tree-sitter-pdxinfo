@@ -97,6 +97,7 @@
   {
     "type": "document",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -210,11 +211,6 @@
     }
   },
   {
-    "type": "string",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "version",
     "named": true,
     "fields": {},
@@ -283,6 +279,10 @@
   },
   {
     "type": "reverse_dns",
+    "named": true
+  },
+  {
+    "type": "string",
     "named": true
   },
   {

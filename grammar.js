@@ -5,7 +5,8 @@ module.exports = grammar({
   name: "pdxinfo",
   extras: (_) => [],
   rules: {
-    document: ($) => seq(/(\r?\n)*/, repeat(choice($.comment, $.statement, /(\r?\n)+/, "\0"))),
+    document: ($) =>
+      seq(/(\r?\n)*/, repeat(choice($.comment, $.statement, /(\r?\n)+/, "\0"))),
     comment: ($) => choice(seq("#", /[^\r\n]+/), "#"),
     statement: ($) =>
       seq(
@@ -35,7 +36,7 @@ module.exports = grammar({
     contentWarning2: ($) => seq("contentWarning2", "=", $.string),
 
     // Custom definitions (key=value)
-    string: (_) => /[^\r\n]+/,
+    string: (_) => /[^\r\n]*/,
     integer: (_) => /[0-9]+/,
     reverse_dns: (_) => /[-a-zA-Z0-9]+(\.[-a-zA-Z0-9]+)+/,
   },

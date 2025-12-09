@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "pdxinfo",
+      "camelcase": "Pdxinfo",
+      "title": "Pdxinfo",
+      "scope": "source.pdxinfo",
+      "file-types": ["pdxinfo"],
+      "injection-regex": "^pdxinfo$",
+      "highlights": ["queries/highlights.scm"],
+      "class-name": "TreeSitterPdxinfo"
+    }
+  ],
+  "metadata": {
+    "version": "1.1.0",
+    "license": "MIT",
+    "description": "Playdate pdxinfo game metadata",
+    "authors": [
+      {
+        "name": "Peter Tripp",
+        "email": "petertripp@gmail.com",
+        "url": "https://github.com/notpeter"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/notpeter/tree-sitter-pdxinfo",
+      "funding": "https://github.com/sponsors/notpeter/"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}
